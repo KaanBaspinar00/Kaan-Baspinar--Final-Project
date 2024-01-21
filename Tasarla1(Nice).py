@@ -13,6 +13,14 @@
 # This is the first design for interface to get data from user. This will change.
 # The changes which will be done is shown in the Hafta1-> PHYS400-200124(final).pdf
 
+# To use this interface do the followings:
+# 1) fill the first row. (angle should be given 0 for now.)
+# 2) press add line ( or ctrl + A). Fill the first two columns. 
+# 3) repeat the process for every layer. 
+# 4) After each layer's information is given, press the button show graph (or ctrl + G).
+# 5) To delete any line, select the line and type ctrl + delete.
+# 6) All length values should be given in the scale of nanometer.
+
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.pyplot as plt
 import numpy as np
