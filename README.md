@@ -18,7 +18,7 @@ This Python program provides a graphical user interface (GUI) for users to input
 
 ## Overview
 
-This program is designed to facilitate the input of material layer data through a user-friendly interface. Users can input information such as material, thickness, wavelength range, and angle for each layer. The interface allows for the dynamic addition and deletion of layers, making it easy to manage complex data sets.
+This program is designed to facilitate the input of thin film layers data through a user-friendly(?) interface. Users can input information such as material thickness and refractive index, wavelength range, and angle. The interface allows for the dynamic addition and deletion of layers, making it easy to manage complex data sets.
 
 ## Features
 
@@ -29,7 +29,7 @@ This program is designed to facilitate the input of material layer data through 
 ## Usage
 
 1. **Input Material Data:**
-   - Fill in the material, thickness, wavelength range, and angle for each layer in the table.
+   - Fill in the material thickness and refractive index, wavelength range, and angle in the table.
    - Use the "Add Line" button (or press `Ctrl + A`) to add a new row for each layer.
 
 2. **Visualize Data:**
