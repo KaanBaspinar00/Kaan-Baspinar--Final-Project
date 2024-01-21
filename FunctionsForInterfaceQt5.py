@@ -1,3 +1,11 @@
+## In this python file, there are two functions. 
+# plotGraph function is used in the showGraph function in the Tasarla1(Nice).py file. 
+# It plots the graph to show that the relationship between wavelength and reflectance 
+# when n different thin film layer is provided. 
+# createMatrix function is used to create transfer matrix MT and then calculate 
+# the R value for each wavelength value.
+# Then, it returns the list of R values.
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
