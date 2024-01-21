@@ -17,32 +17,9 @@ from PyQt5.QtCore import Qt, QThread, pyqtSignal
 import subprocess
 from PyQt5 import QtCore, QtGui, QtWidgets
 from FunctionsForInterfaceQt5 import plotGraph
-"""
-def plotGraph(df):
-    # Generate an array of wavelengths using NumPy
-    lambda_values = np.arange(float(df["Wavelength >"][0]), float(df["Wavelength <"][0]), 0.005)
 
-    # Calculate reflectance values based on your formula (for illustration purposes, replace this with your actual calculation)
-    reflectance_values = lambda_values ** 2 - 20 * lambda_values + 10
-
-    # Create a figure and axis
-    fig, ax = plt.subplots()
-
-    # Plot the data on the axis
-    ax.plot(lambda_values, reflectance_values, "-r")
-
-    # Set titles and labels
-    ax.set_title("Wavelength vs Reflectance")
-    ax.set_xlabel("Wavelength (um)")
-    ax.set_ylabel("Reflectance (arbitrary unit)")
-
-    # Add a grid
-    ax.grid()
-
-    # Show the plot
-    plt.show()
-    return lambda_values"""
 from FunctionsForInterfaceQt5 import plotGraph
+
 class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
         mainWindow.setObjectName("mainWindow")
@@ -69,14 +46,6 @@ class Ui_mainWindow(object):
         item = QtWidgets.QTableWidgetItem()
         self.DataTable.setHorizontalHeaderItem(4, item)
         item = QtWidgets.QTableWidgetItem()
-
-        """item = QtWidgets.QTableWidgetItem()  # Initialize an empty item for the first cell
-        self.DataTable.setItem(0,0, item)"""
-
-        """items = ["Choose element", "M1", "M2", "M3"]
-        combo_box = QComboBox()
-        combo_box.addItems(items)
-        self.DataTable.setCellWidget(0, 0, combo_box)"""
 
 
         item.setFlags(QtCore.Qt.ItemIsSelectable|QtCore.Qt.ItemIsEditable|QtCore.Qt.ItemIsDragEnabled|QtCore.Qt.ItemIsDropEnabled|QtCore.Qt.ItemIsUserCheckable|QtCore.Qt.ItemIsEnabled)
