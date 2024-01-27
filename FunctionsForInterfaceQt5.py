@@ -1,10 +1,26 @@
-## In this python file, there are two functions. 
-# plotGraph function is used in the showGraph function in the Tasarla1(Nice).py file. 
-# It plots the graph to show that the relationship between wavelength and reflectance 
-# when n different thin film layer is provided. 
-# createMatrix function is used to create transfer matrix MT and then calculate 
+# Kaan Başpınar
+# e242285@metu.edu.tr
+
+# 20/01/2024
+
+## In this python file, there are two functions.
+# plotGraph function is used in the showGraph function in the Tasarla1(Nice).py file.
+# It plots the graph to show that the relationship between wavelength and reflectance
+# when n different thin film layer is provided.
+# createMatrix function is used to create transfer matrix MT and then calculate
 # the R value for each wavelength value.
 # Then, it returns the list of R values.
+###########################ooooo000000000000000000ooooo################################
+# 27/01/2024
+# 2 functions is added. 
+
+# The function below creates random sized of layers for materials
+#                         create_list_of_material(original_array, num_arrays)
+
+# The function below randomly decides thickness  of layers for each materials: 
+#                         create_thickness_list(material_list_large,thickness)
+
+###########################ooooo000000000000000000ooooo################################
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -61,9 +77,53 @@ def create_matrix(df,theta = 0, theta2 = 0):
         R.append((np.dot(ri,ri.conjugate()).real))
 
     return R
+np.random.seed(42)
+Materials = np.round(np.random.randint(10,30,20)/10,2)
+Thickness = np.arange(200,1020,20)
+#print(f"Materials: {Materials}")
+#print(f"Thickness: {Thickness}")
 
-#df = pd.DataFrame({"Material": [2.1],"Thickness": [100], "Wavelength >": [300], "Wavelength <": [800], "Angle": [0]})
 
-#create_matrix(df)
+def create_list_of_material(original_array, num_arrays):
+    new_arrays = []
+    np.random.seed(42)
+    for _ in range(num_arrays):
+        # Randomly choose the size of the new array
+        array_size = np.random.randint(1, len(original_array) + 1)
+
+        # Randomly select the first element from the original array
+        selected_elements = [np.random.choice(original_array)]
+
+        # Iterate to choose subsequent elements, ensuring they don't repeat successively
+        for _ in range(array_size - 1):
+            available_elements = np.setdiff1d(original_array, selected_elements[-1])
+            selected_elements.append(np.random.choice(available_elements))
+
+        # Create the new array
+        new_array = np.array(selected_elements)
+
+        # Append the new array to the list
+        new_arrays.append(new_array)
+
+    return new_arrays
+
+material_list = create_list_of_material(Materials,100)
+
+print(f"Material List: \n{material_list}")
+
+def create_thickness_list(material_list_large,thickness):
+    large_list_thickness = []
+    for little_list in material_list_large:
+        little_list_for_thickness = []
+        for m in little_list:
+            little_list_for_thickness.append(np.random.choice(thickness))
+        large_list_thickness.append(np.array(little_list_for_thickness))
+    return large_list_thickness
+
+thickness_list = create_thickness_list(material_list,Thickness)
+print(f"Thickness List: \n{thickness_list}")
+
+df = pd.DataFrame({"Material": [2.1],"Thickness": [100], "Wavelength >": [300], "Wavelength <": [1000], "Angle": [0]})
+
+create_matrix(df)
 #plotGraph(df)
-
