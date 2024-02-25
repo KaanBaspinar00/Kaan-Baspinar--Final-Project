@@ -1,3 +1,5 @@
+# Some parts of this rewritten in the file Physics_And_Plot.py and some of them can be used later.
+
 # Kaan Başpınar
 # e242285@metu.edu.tr
 
