@@ -1,3 +1,39 @@
+# Kaan Başpınar
+# e242285@metu.edu.tr
+
+# 25/02/2024
+
+"""
+Summary:
+
+This Python script provides functionalities to calculate and visualize reflectance 
+based on refractive index data stored in CSV files. It includes:
+
+ReflectanceCalculator Class:
+Initializes with a directory containing CSV files and reads the data into a DataFrame.
+Provides methods to interpolate wavelengths and refractive indices, retrieve interpolated 
+data for specified materials, create a matrix for reflectance calculation, plot the 
+reflectance graph, and display help information about its methods.
+
+Methods:
+interpolate_wavelength: Interpolates and/or extrapolates wavelengths and refractive indices within a specified range.
+get_info: Retrieves desired data for specified materials.
+create_matrix: Creates a matrix for reflectance calculation using given materials,
+thickness, and wavelength limits.
+
+plotGraph: Plots the reflectance graph.
+help: Displays help information about the methods of the ReflectanceCalculator class.
+Usage:
+
+Initialize ReflectanceCalculator with a directory containing CSV files.
+Use its methods to perform various operations such as interpolation, matrix creation, 
+plotting, and obtaining help information.
+
+The script demonstrates an organized approach to handle reflectance calculations and provides 
+flexibility for users to analyze reflectance based on provided material data.
+"""
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 from Read_data import CSVReader
